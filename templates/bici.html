@@ -1,0 +1,28 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog</title>
+        {% endif %}
+    </head>
+    <body>
+	<table>
+        <h1>Informacion de bicicletas</h1>
+	<tr>
+		<td><strong>Id Bicicleta</strong></td>
+ 	 	<td><strong>Marca</strong></td>
+  		<td><strong>Aro</strong></td>
+		<td><strong>Id Dueño</strong></td>
+	</tr>
+        {% for bici in json_data %}
+	<tr>
+		<td>{{ bici.id_bicicleta }}</td>
+ 	 	<td>{{ bici.marca }}</td>
+  		<td>{{ bici.aro }}</td>
+		<td>{{ bici.id_dueño }}</td>        	
+	</tr>
+        {% endfor %}
+	</table>
+    </body>
+</html>
